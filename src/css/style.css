@@ -206,6 +206,60 @@ button {
   grid-column: 3;
 }
 
+.product-list-grid {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+  list-style: none;
+}
+
+.product-list-grid li {
+  border: gray 1px solid;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+}
+
+.product-list-grid li:hover {
+  scale: 1.05;
+  transition: all 0.2s ease-in-out;
+}
+
+.product-list-grid li:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--primary-color);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.product-list-grid li a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
+.product-list-grid li a img {
+  height: 10em;
+}
+.product-list-grid li a h2 {
+  list-style-type: none;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

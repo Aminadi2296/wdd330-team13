@@ -1,21 +1,12 @@
-import ProductData from "./ProductData.mjs";
-import ProductList from "./ProductList.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
-
+import { initializeProductListing } from "./product-listing.js";
 
 // Load header and footer first
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // Load header and footer templates
     await loadHeaderFooter();
-    
-    // Then initialize the product list
-    const dataSource = new ProductData("tents");
-    const element = document.querySelector(".product-list");
-    const productList = new ProductList("Tents", dataSource, element);
-    
-    productList.init();
+    initializeProductListing(); // Initialize product listing after header/footer
   } catch (error) {
-    console.error("Error loading header/footer or initializing product list:", error);
+    console.error("Error loading templates or product listing:", error);
   }
 });
