@@ -54,26 +54,13 @@ export async function loadTemplate(path) {
 
 
 export async function loadHeaderFooter() {
-  try {
     const headerTemplate = await loadTemplate("../partials/header.html");
     const footerTemplate = await loadTemplate("../partials/footer.html");
     
     const headerElement = document.querySelector("#main-header");
     const footerElement = document.querySelector("#main-footer");
+
+  renderWithTemplate(headerTemplate, headerElement);
+  renderWithTemplate(footerTemplate, footerElement);
     
-    if (headerElement) {
-      renderWithTemplate(headerTemplate, headerElement);
-    } else {
-      console.warn("Header element (#main-header) not found in DOM");
-    }
-    
-    if (footerElement) {
-      renderWithTemplate(footerTemplate, footerElement);
-    } else {
-      console.warn("Footer element (#main-footer) not found in DOM");
-    }
-  } catch (error) {
-    console.error("Failed to load header/footer:", error);
-    throw error; 
-  }
 }
