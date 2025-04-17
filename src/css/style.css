@@ -22,6 +22,11 @@ body {
   font-size: var(--font-base);
   color: var(--dark-grey);
 }
+
+.wrapper {
+  padding: 0 10em;
+}
+
 img {
   max-width: 100%;
 }
@@ -126,13 +131,15 @@ button {
 .products {
   padding: 0.5em;
 }
+
 .product-list {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
 }
+
 .product-list a {
   text-decoration: none;
   color: var(--dark-grey);
@@ -266,8 +273,17 @@ button {
     max-width: 1080px;
     margin: auto;
   }
+
+  .wrapper {
+    padding: 0;
+  }
+
   .mission {
     font-size: 1.2em;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr 1fr;
   }
 
   .product-list-grid {
