@@ -256,11 +256,12 @@ button {
 .product-list-grid li a img {
   height: 10em;
 }
+
 .product-list-grid li a h2 {
   list-style-type: none;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 500px) {
   body {
     max-width: 1080px;
     margin: auto;
@@ -268,6 +269,15 @@ button {
   .mission {
     font-size: 1.2em;
   }
+
+  .product-list-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-list-grid li a img {
+    height: 5em;
+  }
+
   .cart-card {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;
