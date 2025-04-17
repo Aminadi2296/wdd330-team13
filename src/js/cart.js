@@ -4,7 +4,9 @@ loadHeaderFooter();
 
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
+  const htmlItems = cartItems
+  .filter(item => item !== null && item !== undefined)
+  .map(item => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
   if (cartItems.length > 0) setupRemoveButtons();
