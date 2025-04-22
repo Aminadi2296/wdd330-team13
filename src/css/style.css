@@ -86,7 +86,8 @@ header {
   color: var(--tertiary-color);
 }
 
-button {
+button,
+.btn {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
   color: white;
@@ -96,6 +97,21 @@ button {
   font-size: var(--large-font);
   cursor: pointer;
 }
+
+.btn {
+  padding: 0.5em 2em;
+  background-color: var(--secondary-color);
+  color: white;
+  margin: auto;
+  display: block;
+  border: 0;
+  font-size: var(--large-font);
+  cursor: pointer;
+  width: 9em;
+  text-decoration: none;
+  text-align: center;
+}
+
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
